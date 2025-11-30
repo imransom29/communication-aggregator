@@ -188,12 +188,12 @@ Trace ID: trace-abc-456
 
 | Feature | RabbitMQ | Redis Streams | Kafka | Direct HTTP |
 |---------|----------|---------------|-------|-------------|
-| Persistence | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No |
-| Message Ordering | ✅ Per Queue | ✅ Per Stream | ✅ Per Partition | ❌ No |
-| Acknowledgments | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No |
-| Dead Letter Queue | ✅ Built-in | ⚠️ Manual | ⚠️ Manual | ❌ No |
-| Prefetch Control | ✅ Yes | ⚠️ Limited | ⚠️ Limited | ❌ No |
-| Complexity | ⚠️ Medium | ✅ Low | ❌ High | ✅ Low |
+| Persistence |  Yes |  Yes |  Yes |  No |
+| Message Ordering |  Per Queue |  Per Stream |  Per Partition |  No |
+| Acknowledgments |  Yes |  Yes |  Yes |  No |
+| Dead Letter Queue |  Built-in |  Manual |  Manual |  No |
+| Prefetch Control |  Yes |  Limited |  Limited |  No |
+| Complexity |  Medium |  Low |  High |  Low |
 | Best For | Task Queues | Event Streams | Event Logs | Simple APIs |
 
 **Decision:** RabbitMQ chosen for its robust task queue features and built-in reliability mechanisms.
