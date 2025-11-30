@@ -23,7 +23,7 @@ docker-compose --version
 ### 1. Navigate to Project Directory
 
 ```bash
-cd /Users/sirvinayak/CascadeProjects/communication-aggregator
+cd /communication-aggregator
 ```
 
 ### 2. Install Dependencies
