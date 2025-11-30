@@ -426,7 +426,7 @@ metadata.priority: "high"
 - No encryption (local network)
 - No rate limiting
 
-### Production Requirements
+### Enchancement Requirements that we can do
 
 1. **Authentication:**
    - JWT tokens for API access
