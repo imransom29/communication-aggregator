@@ -1,0 +1,341 @@
+{
+  "info": {
+    "name": "Communication Aggregator API",
+    "description": "API collection for Communication Aggregator System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Task Router Service",
+      "item": [
+        {
+          "name": "Send Email Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel\": \"email\",\n  \"to\": \"user@example.com\",\n  \"subject\": \"Test Email\",\n  \"body\": \"This is a test email message\",\n  \"metadata\": {\n    \"priority\": \"high\",\n    \"campaign\": \"test-campaign\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/messages",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["api", "messages"]
+            },
+            "description": "Send an email message through the communication aggregator"
+          },
+          "response": []
+        },
+        {
+          "name": "Send SMS Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel\": \"sms\",\n  \"to\": \"+1234567890\",\n  \"body\": \"This is a test SMS message\",\n  \"metadata\": {\n    \"priority\": \"normal\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/messages",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["api", "messages"]
+            },
+            "description": "Send an SMS message"
+          },
+          "response": []
+        },
+        {
+          "name": "Send WhatsApp Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel\": \"whatsapp\",\n  \"to\": \"+1234567890\",\n  \"body\": \"This is a test WhatsApp message\",\n  \"metadata\": {\n    \"priority\": \"urgent\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/messages",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["api", "messages"]
+            },
+            "description": "Send a WhatsApp message"
+          },
+          "response": []
+        },
+        {
+          "name": "Test Duplicate Detection",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"channel\": \"email\",\n  \"to\": \"duplicate@example.com\",\n  \"subject\": \"Duplicate Test\",\n  \"body\": \"This message will be deduplicated\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3001/api/messages",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["api", "messages"]
+            },
+            "description": "Send this request twice to test duplicate detection. Second request should return 409 error."
+          },
+          "response": []
+        },
+        {
+          "name": "Health Check - Task Router",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/api/messages/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["api", "messages", "health"]
+            },
+            "description": "Check health status of Task Router service"
+          },
+          "response": []
+        },
+        {
+          "name": "Health Check - Root",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3001/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["health"]
+            },
+            "description": "Root health check endpoint"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Logging Service",
+      "item": [
+        {
+          "name": "Search All Logs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3003/api/logs/search?limit=50",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["api", "logs", "search"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "50"
+                }
+              ]
+            },
+            "description": "Search all logs with limit"
+          },
+          "response": []
+        },
+        {
+          "name": "Search Logs by Service",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3003/api/logs/search?service=task-router&limit=20",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["api", "logs", "search"],
+              "query": [
+                {
+                  "key": "service",
+                  "value": "task-router"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "Search logs from Task Router service"
+          },
+          "response": []
+        },
+        {
+          "name": "Search Error Logs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3003/api/logs/search?level=error&limit=30",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["api", "logs", "search"],
+              "query": [
+                {
+                  "key": "level",
+                  "value": "error"
+                },
+                {
+                  "key": "limit",
+                  "value": "30"
+                }
+              ]
+            },
+            "description": "Search only error level logs"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Logs by Trace ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3003/api/logs/trace/:traceId",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["api", "logs", "trace", ":traceId"],
+              "variable": [
+                {
+                  "key": "traceId",
+                  "value": "your-trace-id-here",
+                  "description": "Replace with actual trace ID from message response"
+                }
+              ]
+            },
+            "description": "Get all logs for a specific trace ID (end-to-end request tracking)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Log Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3003/api/logs/stats",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["api", "logs", "stats"]
+            },
+            "description": "Get aggregated statistics about logs"
+          },
+          "response": []
+        },
+        {
+          "name": "Health Check - Logging Service",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3003/api/logs/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["api", "logs", "health"]
+            },
+            "description": "Check health status of Logging service and Elasticsearch connection"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "item": [
+        {
+          "name": "RabbitMQ Management UI",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:15672",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "15672"
+            },
+            "description": "Access RabbitMQ Management UI (credentials: guest/guest)"
+          },
+          "response": []
+        },
+        {
+          "name": "Elasticsearch Health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9200/_cluster/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "9200",
+              "path": ["_cluster", "health"]
+            },
+            "description": "Check Elasticsearch cluster health"
+          },
+          "response": []
+        },
+        {
+          "name": "Kibana Dashboard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5601",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5601"
+            },
+            "description": "Access Kibana dashboard for log visualization"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "task_router_url",
+      "value": "http://localhost:3001"
+    },
+    {
+      "key": "logging_service_url",
+      "value": "http://localhost:3003"
+    }
+  ]
+}

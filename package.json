@@ -1,0 +1,31 @@
+{
+  "name": "communication-aggregator",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm:start:*\"",
+    "start:task-router": "npm run start -w @comm/task-router",
+    "start:delivery": "npm run start -w @comm/delivery-service",
+    "start:logging": "npm run start -w @comm/logging-service",
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:task-router": "npm run dev -w @comm/task-router",
+    "dev:delivery": "npm run dev -w @comm/delivery-service",
+    "dev:logging": "npm run dev -w @comm/logging-service",
+    "test": "npm run test --workspaces",
+    "build": "npm run build --workspaces",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "express-validator": "^7.3.1",
+    "lodash": "^4.17.21"
+  }
+}
