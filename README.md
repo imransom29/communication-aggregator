@@ -95,7 +95,7 @@ The system consists of 3 independent microservices that communicate asynchronous
 - Log search by service, level, trace ID, time range
 - Real-time statistics and aggregations
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Runtime:** Node.js 18+ with TypeScript
 - **Web Framework:** Express.js
@@ -105,7 +105,7 @@ The system consists of 3 independent microservices that communicate asynchronous
 - **Validation:** express-validator
 - **Containerization:** Docker & Docker Compose
 
-## 📦 Prerequisites
+## Prerequisites
 
 Before running the project, ensure you have:
 
@@ -119,7 +119,7 @@ Before running the project, ensure you have:
 ### 1. Clone the Repository
 
 ```bash
-cd /Users/sirvinayak/CascadeProjects/communication-aggregator
+git clone https://github.com/imransom29/communication-aggregator.git
 ```
 
 ### 2. Install Dependencies
@@ -281,7 +281,7 @@ GET /api/logs/stats
 GET /api/logs/health
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Manual Testing with cURL
 
