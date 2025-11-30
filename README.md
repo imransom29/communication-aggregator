@@ -2,7 +2,7 @@
 
 A microservices-based backend system for intelligent message routing across multiple communication channels (Email, SMS, WhatsApp).
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Architecture Overview](#architecture-overview)
 - [System Components](#system-components)
@@ -15,7 +15,7 @@ A microservices-based backend system for intelligent message routing across mult
 - [Architecture Decisions](#architecture-decisions)
 - [Troubleshooting](#troubleshooting)
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 The system consists of 3 independent microservices that communicate asynchronously:
 
@@ -48,7 +48,7 @@ The system consists of 3 independent microservices that communicate asynchronous
 4. Both services send logs to **Logging Service**
 5. **Logging Service** stores logs in Elasticsearch for analysis via Kibana
 
-## 🔧 System Components
+## System Components
 
 ### 1. Task Router Service (Port 3001)
 
@@ -175,7 +175,7 @@ docker-compose ps
 npm run build
 ```
 
-## 🏃 Running the Services
+## Running the Services
 
 ### Option 1: Run All Services (Development Mode)
 
