@@ -208,7 +208,7 @@ npm run build
 npm start
 ```
 
-## 📡 API Documentation
+## API Documentation
 
 ### Task Router Service (http://localhost:3001)
 
