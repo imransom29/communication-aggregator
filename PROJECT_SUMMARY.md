@@ -2,7 +2,7 @@
 
 ## Overview
 
-A production-ready microservices-based backend system for intelligent message routing across multiple communication channels (Email, SMS, WhatsApp). Built with Node.js, TypeScript, RabbitMQ, and Elasticsearch.
+A microservices-based backend system for intelligent message routing across multiple communication channels (Email, SMS, WhatsApp). Built with Node.js, TypeScript, RabbitMQ, and Elasticsearch.
 
 ## What Has Been Implemented
 
