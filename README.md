@@ -1,6 +1,6 @@
 # Communication Aggregator System
 
-A microservices-based backend system for intelligent message routing across multiple communication channels (Email, SMS, WhatsApp).
+A microservices-based backend system for message routing across multiple communication channels (Email, SMS, WhatsApp).
 
 ## Table of Contents
 
