@@ -494,7 +494,7 @@ metadata.priority: "high"
 
 ### Latency Targets
 
-- **Message Submission:** < 100ms (p95)
+- **Message Submission:** < 100ms (p95)  
 - **Message Delivery:** < 2s (p95)
 - **Log Indexing:** < 500ms (p95)
 - **Log Search:** < 1s (p95)
